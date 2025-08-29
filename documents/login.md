@@ -35,15 +35,18 @@ Dokumen ini memandu kamu login SSH ke **HPC Cakra** langsung dari **Visual Studi
 > * **Domain Cloudflare**: `cakra.rfa-iyang.online`
 
 ---
-## Langkah 1: Pasang VS Code & Ekstensi
+## Memasang VS Code & Ekstensi
 1. Pasang **VS Code** dari situs resmi.
 2. Buka VS Code → **Extensions** → cari **Remote - SSH** (penerbit: *Microsoft*) → **Install**.
+
 ---
 
 # Login Cakra via SSH memakai Password
 
-## Langkah 2: Konfigurasi SSH
-Salin dan Sesuikan isi konfiugrasi berikut ini
+## Langkah 1: Konfigurasi SSH
+Buka Visual Studio Code
+![Teks alternatif untuk gambar](/home/rog/brin2025/git/Cakra-HPC/imgs/loginimg/awal.png)
+
 ```bash
 Host cakra
 	User username
@@ -252,4 +255,3 @@ ssh hpc-cakra
 ---
 
 Selesai! Setelah ini kamu bisa ngoding, submit job SLURM, dan memantau job langsung dari VS Code yang sudah terhubung ke **HPC Cakra**. Silakan revisi bagian yang perlu disesuaikan (mis. username, jalur folder home, atau kebijakan akses).
-
