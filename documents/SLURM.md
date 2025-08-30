@@ -49,11 +49,15 @@ Membuat file ``run.sh`` di directory file python yang akan dijalankan dengan isi
 # load module compiler
 module load gcc/11.4.0
 
+echo "Start = $(date)"
+
 # compile
 gcc matmul.c -o matmul_c    # mamtul.c adalah nama program dengan output matmul_c
 
 # binary file
 ./matmul_c
+
+echo "End = $(date)"
 ```
 
 ## Program Fortran
@@ -75,9 +79,13 @@ Membuat file ``run.sh`` di directory file python yang akan dijalankan dengan isi
 # load module compiler
 module load gfortran/11.4.0
 
+echo "Start = $(date)"
+
 # compile
 gfortran matmul.f90 -o matmul      # mamtul.f90 adalah nama program dengan output matmul
 
-# jalankan program
+# binary file
 ./matmul
+
+echo "end = $(date)"
 ```
