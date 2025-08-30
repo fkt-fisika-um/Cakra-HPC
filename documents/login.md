@@ -7,12 +7,11 @@ Dokumen ini memandu kamu login SSH ke **HPC Cakra** langsung dari **Visual Studi
 ## 🧭 Daftar Isi
 
 - [📦 Prasyarat](#prasyarat)
-- [🔧 Opsi Koneksi: Langsung vs Cloudflare](#opsi-koneksi-langsung-vs-cloudflare)
-- [🧰 Langkah 1: Memasang VS Code & Ekstensi](#langkah-1-memasang-vs-code--ekstensi)
-- [🔑 Langkah 2: Membuat SSH Key](#langkah-2-membuat-ssh-key)
+- [🔑 Langkah 1: Membuat SSH Key](#membuat-ssh-key)
+- [🧰 Langkah 2: Memasang VS Code & Ekstensi](#memasang-vs-code--ekstensi)
 - [🔌 Login Cakra via SSH memakai Password](#login-cakra-via-ssh-memakai-password)
-  - [Konfigurasi SSH (VS Code)](#konfigurasi-ssh-vs-code)
-  - [Masuk ke Cakra](#masuk-ke-cakra)
+  - [Konfigurasi SSH (VS Code)](#langkah-1-konfigurasi-ssh)
+  - [Masuk ke Cakra](#langkah-2-masuk-ke-cakra)
 - [🔐 Login Cakra via SSH tanpa Password (SSH Key + Cloudflare)](#login-cakra-via-ssh-tanpa-password)
   - [Langkah 1: Kirim Public Key ke Cakra](#langkah-1-kirim-public-key-ke-cakra)
   - [Langkah 2: Memasang Cloudflare pada Windows](#langkah-2-memasang-cloudflare-pada-windows)
@@ -66,7 +65,7 @@ Host cakra
   HostName 10.8.7.224
 ```
 
-## Langkah 3: Masuk ke Cakra
+## Langkah 2: Masuk ke Cakra
 Didalam Visual Studio Code ikut petunjuk gambar ini:
 ![Screenshot Ekstensi](./loginimg/pass.png)
 
