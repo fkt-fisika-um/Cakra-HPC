@@ -1,6 +1,6 @@
-# 🚀 Tutorial: Masuk ke HPC **Cakra** lewat **VS Code** di **Windows**
+# 🚀 Tutorial: Mengakses HPC **Cakra** melalui **VS Code** pada **Windows**
 
-Dokumen ini memandu kamu login SSH ke **HPC Cakra** langsung dari **Visual Studio Code (VS Code)** di Windows menggunakan ekstensi **Remote - SSH**. Disertai dua skenario koneksi: **langsung (IP kampus)** dan **melewati Cloudflare Access**.
+Dokumen ini membantu mengakses SSH ke **HPC Cakra** langsung dari **Visual Studio Code (VS Code)** pada Windows menggunakan ekstensi **Remote - SSH**. Disertai dua skenario koneksi: **langsung (IP kampus)** dan **melewati Cloudflare Access**.
 
 ---
 
@@ -24,7 +24,7 @@ Dokumen ini memandu kamu login SSH ke **HPC Cakra** langsung dari **Visual Studi
 
 ## Prasyarat
 
-* **VS Code** terpasang.
+* **VS Code** harus sudah terpasang.
 * Ekstensi **Remote - SSH** di VS Code.
 * **(Opsional)** Akses **Cloudflare** jika koneksi eksternal lewat domain (mis. `cakra.rfa-iyang.online`).
 
@@ -34,7 +34,7 @@ Dokumen ini memandu kamu login SSH ke **HPC Cakra** langsung dari **Visual Studi
 > * **Domain Cloudflare**: `cakra.rfa-iyang.online`
 
 ## Membuat SSH Key
-Buka powershell pada windows, lalu masukkan:
+Buka powershell pada windows, lalu jalankan perintah:
 
 ```powershell
 ssh-keygen -t rsa -b 4096 -C "kuncicakra"
@@ -46,15 +46,15 @@ Tekan **Enter** terus untuk lokasi default: `C:\Users\<NamaUser>\.ssh\id_rsa` da
 
 ---
 ## Memasang VS Code & Ekstensi
-1. Pasang **VS Code** dari situs resmi.
-2. Buka VS Code → **Extensions** → cari **Remote - SSH** (penerbit: *Microsoft*) → **Install**
+1. Memasang **VS Code** dari situs resmi pada laptop atau komputer masing-masing.
+2. Membuka VS Code → **Extensions** → cari **Remote - SSH** (penerbit: *Microsoft*) → **Install**
 
 ---
 
 # Login Cakra via SSH memakai Password
 
 ## Langkah 1: Konfigurasi SSH
-Buka Visual Studio Code dan ikuti petunjuk angka berikut:
+Mulai dengan menjalankan Visual Studio Code dan ikuti petunjuk angka berikut:
 ![Screenshot Ekstensi](./loginimg/awal.png)
 
 Jika sudah copy konfigurasi berikut ini dan sesuaikan username dan IdentityFile
@@ -66,7 +66,7 @@ Host cakra
 ```
 
 ## Langkah 2: Masuk ke Cakra
-Didalam Visual Studio Code ikut petunjuk gambar ini:
+Pada Visual Studio Code ikut petunjuk sesuai yang tertera pada gambar ini:
 ![Screenshot Ekstensi](./loginimg/pass.png)
 
 # Login Cakra via SSH tanpa Password
@@ -82,7 +82,7 @@ cat .\id_rsa.pub
 Salin hasil ``id_rsa.pub``. Contohnya pada gambar dibawah ini:
 ![Screenshot Ekstensi](./loginimg/sell.png)
 
-Hubungi managemen Cakra dengan mengirim email ke fkt ``fkt.um.fisika@gmail.com`` dengan format sebagai berikut:
+Silakan menghubungi tim manajemen Cakra melalui alamat e-mail fkt.um.fisika@gmail.com, dengan format berikut:
 ```bash
 Nama:
 NIM:
@@ -97,10 +97,10 @@ Get-Command cloudflared
 ```
 
 ![Screenshot Ekstensi](./loginimg/path.png)
-Didalam kotak merah tersebut ialah ``path cloudflared.exe`` yang akan digunakan untuk ``ProxyCommand`` pada saat konfigurasi SSH
+Bagian yang ditandai kotak merah merupakan ``path cloudflared.exe`` yang akan digunakan sebagai ``ProxyCommand`` pada saat melakukan konfigurasi SSH.
 
 ## Langkah 3: Konfigurasi SSH
-Buka Visual Studio Code dan buka konfigurasi ssh, lalu tambahkan konfigurasi berikut ini:
+Buka Visual Studio Code, kemudian akses konfigurasi ssh. Setelah itu, tambahkan konfigurasi berikut ini:
 
 ```sshconfig
 Host hpc-cakra
@@ -115,21 +115,21 @@ pada bagian ``ProxyCommand`` sesuaikan ``path`` dengan langkah 2
 
 ## Langkah 4: Tes Koneksi dari Terminal Windows
 
-Sebelum masuk lewat VS Code, coba dari PowerShell:
+Sebelum melakukan koneksi melalui Visual Studio Code, uji terlebih dahulu dari PowerShell dengan perintah berikut::
 
 ```powershell
 ssh hpc-cakra
 ```
 
-Pada koneksi pertama, akan muncul pertanyaan **fingerprint host** → jawab `yes`.
-Jika berhasil, kamu akan melihat shell di **Cakra** (contoh prompt `username@cakra:~$`). Ketik `exit` untuk keluar.
+Pada koneksi pertama, sistem akan menampilkan pertanyaan **fingerprint host** → jawab `yes`.
+Apabila koneksi berhasil, prompt shell **Cakra** akan muncul (contoh prompt `username@cakra:~$`). Untuk keluar dari sesi, ketik perintah `exit`.
 
 
 ## Langkah 5: Connect dari VS Code (Remote - SSH)
 
-1. Di VS Code → **Command Palette** (`Ctrl+Shift+P`).
+1. Pada VS Code → **Command Palette** (`Ctrl+Shift+P`).
 2. Pilih **Remote-SSH: Connect to Host...** → pilih **`hpc-cakra`**.
 3. Pilih jenis OS remote: **Linux**.
-4. Tunggu VS Code memasang server komponen di remote (sekali saja). Jika diminta, pilih lokasi `~/.vscode-server` default.
+4. Tunggu hingga VS Code menyelesaikan proses pemasangan komponen server di remote (sekali saja). Jika diminta, pilih lokasi `~/.vscode-server` default.
 
 Setelah terhubung, pojok kiri-bawah VS Code akan menampilkan **>< SSH: hpc-cakra**.
