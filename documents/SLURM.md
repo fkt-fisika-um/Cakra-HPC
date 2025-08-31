@@ -1,6 +1,6 @@
-# 🚀 Tutorial: SLURM Pada **Cakra**
+# 🚀 Tutorial: SLURM Pada HPC **Cakra**
 
-Dokumen ini membantu cara pemakaian **SLURM** untuk menjalankan sebuah program pada **HPC Cakra**.
+Panduan ini ditunjukkan untuk membantu pengguna dalam mengoperasikan program melalui **SLURM** pada **HPC Cakra**.
 
 ## Program Python
 Membuat file ``run.sh`` di directory file python yang akan dijalankan dengan isi:
