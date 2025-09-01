@@ -13,7 +13,7 @@ Membuat file ``run.sh`` di directory file python yang akan dijalankan dengan isi
 #SBATCH --ntasks=1          # jangan diubah
 #SBATCH --partition=part20A # bisa memakai part20A atau part20B
 #SBATCH --cpus-per-task=1   # jangan diubah
-##SBATCH --gres=gpu:p40:1   # Jika program butuh GPU hapus 1 tanda pagar dan bisa memilih gpu:p40:1 atau gpu:m40:1
+##SBATCH --gres=gpu:p40:1   # Jika program butuh GPU hapus 1 tanda pagar 
 #SBATCH --mem=8G            # jangan diubah
 #SBATCH --output=%x.out     # jangan diubah
 #SBATCH --error=%x.err      # jangan diubah
@@ -71,7 +71,7 @@ Membuat file ``run.sh`` di directory file python yang akan dijalankan dengan isi
 #SBATCH --ntasks=1                 # jangan diubah
 #SBATCH --partition=part20A        # bisa memakai part20A atau part20B
 #SBATCH --cpus-per-task=1          # jangan diubah
-##SBATCH --gres=gpu:p40:1          # Jika program butuh GPU hapus 1 tanda pagar dan bisa memilih gpu:p40:1 atau gpu:m40:1
+##SBATCH --gres=gpu:p40:1          # Jika program butuh GPU hapus 1 tanda pagar
 #SBATCH --mem=8G                   # jangan diubah
 #SBATCH --output=%x.out            # jangan diubah
 #SBATCH --error=%x.err             # jangan diubah
