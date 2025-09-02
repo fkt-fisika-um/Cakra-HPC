@@ -110,7 +110,7 @@ project_qe/
  │   ├─ run.sh           # job script Slurm
  │   └─ relax.out        # output Relax
  │
- └─ tmp/                 # folder kerja QE bersama
+ └─ tmp/                 # folder kerja QE
 ```
 
 
@@ -163,8 +163,10 @@ echo "End: $(date)"
 #SBATCH --output=%x.out             # jangan diubah
 #SBATCH --error=%x.err              # jangan diubah
 
+# Load module Quantum ESPRESSO
 module load quantum-espresso
 
+# Jangan diubah
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
@@ -174,9 +176,9 @@ export OMP_PROC_BIND=close
 echo "Running on $(hostname)"
 echo "Start: $(date)"
 
-mkdir -p ./tmp
+mkdir -p ../tmp
 
-# Jalankan QE SCF
+# Jalankan Quantum ESPRESSO SCF
 mpirun -np $SLURM_NTASKS pw.x -in scf.in > scf.out
 
 echo "End: $(date)"
